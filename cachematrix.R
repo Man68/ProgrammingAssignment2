@@ -41,8 +41,13 @@ cacheSolve <- function(x=matrix(), ...) {
         ## Cached matrix is retrieved only if it exists AND
         ## if the matrix analyzed is the same as the one from which the cache comes
         ## Otherwise, the inversed matrix is recalculated
+  
   originmat<-x$getmatrix()
   mat <- x$getinversedmatrix()
+  
+  ## Getting the inverse matrix from the cache.
+  ## If exists, returns
+  ## otherwise, the inverse matrix is calculated.
   
   if (!is.null(mat)) {
     message("getting inverted matrix from cached data")
